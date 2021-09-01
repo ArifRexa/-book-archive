@@ -5,6 +5,8 @@
 const searchValue =() =>{
     const spinnerid = document.getElementById("spinnerId")
     spinnerid.style.display = "block"
+    const cardid = document.getElementById("cards-id")
+    cardid.style.display = "none"
     const inputBoxText = document.getElementById("input-box")
     const inputBox = inputBoxText.value
     // console.log(inputBox);
@@ -17,7 +19,15 @@ const searchValue =() =>{
 const displayValue = (data) =>{
     
     const totalResult = document.getElementById("total-number")
-    totalResult.innerText = `${data.length} Results found`
+    // totalResult.innerText = `${data.length} Results found`
+    if (data.length === 0) {
+        totalResult.innerText = "No Results Found"
+ 
+    } 
+    else {
+        
+        totalResult.innerText = `${data.length} Results found`
+    }
     const cardID = document.getElementById("card-id")
     cardID.textContent = ""
     // console.log(data.title);
@@ -34,6 +44,7 @@ const displayValue = (data) =>{
                 <h5 class="card-title">${element.title}</h5>
                 <h6 class="card-title">Author: ${element.author_name? element.author_name : "NA"}</h6>
                 <h6 class="card-title">First Published Year: ${element.first_publish_year}</h6>
+                <h6 class="card-title">First Published Year: ${element.publisher}</h6>
                 <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
             </div>
         </div>
@@ -43,7 +54,7 @@ const displayValue = (data) =>{
     // console.log(data.length);
     const spinnerid = document.getElementById("spinnerId")
     spinnerid.style.display = "none"
+    const cardid = document.getElementById("cards-id")
+    cardid.style.display = "block"
 
 }
-
-//  <img src=`https://covers.openlibrary.org/b/id/${cover_i}-L.jpg` class="card-img-top" alt="..."> 

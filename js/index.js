@@ -29,13 +29,13 @@ const searchValue = () =>{
 const displayValue = (data) =>{    
     const totalResult = document.getElementById("total-number")
     if (data.length === 0) {
-        totalResult.innerHTML = `<h4>No Results Found</h4>
+        totalResult.innerHTML = `<h4>No Results Found</h4><hr>
         <div  class="d-flex justify-content-center">
         <img src='image/nai.gif'>
         </div> `
     } 
     else {
-        totalResult.innerText = `${data.length} Results found`
+        totalResult.innerHTML = `<h4>${data.length} Results found</h4><hr>`
     }
 
     const cardID = document.getElementById("card-id")

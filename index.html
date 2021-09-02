@@ -10,44 +10,49 @@
                             Bootstrap
     ====================================================-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    
+    <!--===================================================
+                            Vanilla CSS
+    ====================================================-->
     <link rel="stylesheet" href="style/style.css">
     <title>Book Archived</title>
 </head>
 
 <body>
-    <h1 class="text-center">Welcome to Programming World</h1>
+    <header>
+        <h1 class="text-center fw-bold mt-3">Welcome to Book Shop</h1>
+    </header>
+
+    <!--===================================================
+                        Search Section
+    ====================================================-->
     <section class="container w-50">
         <div class="input-group mb-3 ">
-            <input id="input-box" type="text" class="form-control" placeholder="Recipient's username"
+            <input id="input-box" type="text" class="form-control" placeholder="Enter book name"
                 aria-label="Recipient's username" aria-describedby="button-addon2">
             <button onclick="searchValue()" class="btn btn-outline-secondary" type="button" id="search-button">
                 Submit
             </button>
-
         </div><br>
-        <div class="d-flex justify-content-center">
-            <div id="spinnerId" class="spinner-border" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
-        </div>
     </section>
 
+    <!--===================================================
+                        Spinner Add
+    ====================================================-->
+        <div  class="d-flex justify-content-center" role="status">
+            <img src="image/0_cWpsf9D3g346Va20.gif" alt="" id="spinnerId">
+        </div>
 
 
-    <section id="cards-id" class="container">
+
+    <!--===================================================
+                        Search Results
+    ====================================================-->
+    <section id="cards-section-id" class="container">
         <h3 id="total-number"></h3>
         <div id="card-id" class="row row-cols-1 row-cols-md-3 g-4">
-            <!-- <div  class="col">
-                <div class="card h-100">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                </div>
-            </div> -->
+            <!-- Here Will Add Dynamic Results -->
         </div>
     </section>
 

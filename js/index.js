@@ -5,12 +5,12 @@
 const searchValue =() =>{
     const spinnerid = document.getElementById("spinnerId")
     spinnerid.style.display = "block"
-    const cardid = document.getElementById("cards-id")
-    cardid.style.display = "none"
+    const cardSectionId = document.getElementById("cards-section-id")
+    cardSectionId.style.display = "none"
     const inputBoxText = document.getElementById("input-box")
     const inputBox = inputBoxText.value
     // console.log(inputBox);
-    fetch(`http://openlibrary.org/search.json?q=${inputBox}`)
+    fetch(`https://openlibrary.org/search.json?q=${inputBox}`)
     .then(res => res.json())
     .then(data => displayValue(data.docs))
     inputBoxText.value = ""
@@ -21,7 +21,11 @@ const displayValue = (data) =>{
     const totalResult = document.getElementById("total-number")
     // totalResult.innerText = `${data.length} Results found`
     if (data.length === 0) {
-        totalResult.innerText = "No Results Found"
+        totalResult.innerHTML = `<h4>No Results Found</h4>
+        <div  class="d-flex justify-content-center">
+        <img src='image/nai.gif'>
+        </div>
+         `
  
     } 
     else {
@@ -38,7 +42,7 @@ const displayValue = (data) =>{
         div.classList.add("col")
         // let imgee = `https://covers.openlibrary.org/b/id/${element.cover_i}-M.jpg`
         div.innerHTML = `
-        <div class="card h-100">           
+        <div class="card h-100 shadow-lg">           
             <div class="card-body">
             <img src= "${`https://covers.openlibrary.org/b/id/${element.cover_i}-M.jpg`}" class="card-img-top"> 
                 <h5 class="card-title">${element.title}</h5>
@@ -54,7 +58,7 @@ const displayValue = (data) =>{
     // console.log(data.length);
     const spinnerid = document.getElementById("spinnerId")
     spinnerid.style.display = "none"
-    const cardid = document.getElementById("cards-id")
-    cardid.style.display = "block"
+    const cardSectionId = document.getElementById("cards-section-id")
+    cardSectionId.style.display = "block"
 
 }
